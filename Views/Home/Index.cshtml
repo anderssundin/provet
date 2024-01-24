@@ -1,6 +1,20 @@
+@model StartsidanViewModel
 @{
-   
+
 }
 
 <h1>Startsidan</h1>
-<h2>Välkommen @ViewBag.user</h2>
+<h2>Välkommen</h2>
+<p>@Model.Meddelande</p>
+
+<h3>Fem senaste resultaten</h3>
+
+<ul>
+    @if (Model.HighScore != null)
+    {
+        @foreach (string name in Model.HighScore)
+        {
+            <li>@name</li>
+        }
+    }
+</ul>

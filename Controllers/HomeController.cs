@@ -13,36 +13,53 @@ namespace provet.Controllers
         {
 
             ViewData["title"] = "Startsidan"; // Sidans titel
-                                              // Hämta in user
-                                              // Mockup
-            string user = "Anders";
 
+            // Hämta in highscore
+            // Mockup
+            var viewModel = new StartsidanViewModel
+            {
+                HighScore = new List<string>
+                {
+                    "Anders",
+                    "Sven",
+                    "Lisa",
+                    "Adam",
+                    "Steve"
+                },
+                Meddelande = "Grymt jobbat!"
+        };
+             
+    
+                                             
 
-            ViewBag.user = user;
-            return View();
-        }
-
-
-        /* FRÅGEDELEN */
-        //-------------------------------------------------------//
-
-
-        [Route("/fragor")] // ändrar routingen
-        public IActionResult Questions()
-        {
-            ViewData["title"] = "Frågor"; // Sidans titel
-            return View();
-        }
-
-        /* RESULTAT */
-        //-------------------------------------------------------//
-
-
-        [Route("/resultat")] // ändrar routingen
-        public IActionResult Result()
-        {
-            ViewData["title"] = "Resultat"; // Sidans titel
-            return View();
-        }
+            return View(viewModel);
     }
+
+
+    /* FRÅGEDELEN */
+    //-------------------------------------------------------//
+
+
+    [Route("/fragor")] // ändrar routingen
+    public IActionResult Questions()
+    {
+
+        string user = "Anders";
+        ViewBag.user = user;
+
+        ViewData["title"] = "Frågor"; // Sidans titel
+        return View();
+    }
+
+    /* RESULTAT */
+    //-------------------------------------------------------//
+
+
+    [Route("/resultat")] // ändrar routingen
+    public IActionResult Result()
+    {
+        ViewData["title"] = "Resultat"; // Sidans titel
+        return View();
+    }
+}
 }
