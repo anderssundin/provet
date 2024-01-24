@@ -1,0 +1,19 @@
+{
+  "Version": 1,
+  "Hash": "OJaJyOrT2Qf3Tz127kWRUgRoN6eVuVdS7Q7A6Z0kNds=",
+  "Source": "provet",
+  "BasePath": "_content/provet",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [
+    {
+      "Name": "provet\\wwwroot",
+      "Source": "provet",
+      "ContentRoot": "C:\\Users\\ander\\OneDrive - Mittuniversitetet\\Skrivbordet\\Webbutveckling\\_Termin 4 VT24\\DT 191G Webbutveckling med .NET\\Moment 2 ASP.NET Core MVC\\provet\\wwwroot\\",
+      "BasePath": "_content/provet",
+      "Pattern": "**"
+    }
+  ],
+  "Assets": []
+}
