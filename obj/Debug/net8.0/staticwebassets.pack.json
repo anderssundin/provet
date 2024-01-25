@@ -1,0 +1,25 @@
+{
+  "Files": [
+    {
+      "Id": "C:\\Users\\ander\\OneDrive - Mittuniversitetet\\Skrivbordet\\Webbutveckling\\_Termin 4 VT24\\DT 191G Webbutveckling med .NET\\Moment 2 ASP.NET Core MVC\\provet\\wwwroot\\CSS\\style.css",
+      "PackagePath": "staticwebassets\\CSS\\style.css"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.build.provet.props",
+      "PackagePath": "build\\provet.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildMultiTargeting.provet.props",
+      "PackagePath": "buildMultiTargeting\\provet.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildTransitive.provet.props",
+      "PackagePath": "buildTransitive\\provet.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.provet.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

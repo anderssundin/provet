@@ -2,4 +2,14 @@
 
 }
 
-<h2>Resultat</h2>
+<section id="result-container">
+    <h2>Resultat</h2>
+
+    <p>Bra jobbat</p>
+    <p>@ViewBag.resultName</p>
+    <br>
+    <p>Ditt Resultat:</p>
+    <p id="resultat">@ViewBag.testresult</p>
+
+    <a asp-controller="Home" asp-action="Index">Till startsidan</a>
+</section>

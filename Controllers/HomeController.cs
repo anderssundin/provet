@@ -1,8 +1,10 @@
 
 
 using System.Security.Cryptography.X509Certificates;
+using System.Text.Json;
 using Microsoft.AspNetCore.Authorization.Infrastructure;
 using Microsoft.AspNetCore.Mvc;
+using Newtonsoft.Json;
 using provet.Models;
 
 namespace provet.Controllers
@@ -17,7 +19,8 @@ namespace provet.Controllers
         {
 
             ViewData["title"] = "Startsidan"; // Sidans titel
-
+            //Rensar session
+            HttpContext.Session.Clear();
             // Hämta in highscore
             // Mockup
             var viewModel = new StartsidanViewModel
@@ -47,7 +50,7 @@ namespace provet.Controllers
                 HttpContext.Session.SetString("_name", participant.Name);
                 HttpContext.Session.SetString("_education", participant.HigherEd);
 #pragma warning disable CS8604 // Possible null reference argument.
-                HttpContext.Session.SetString("_Consent", participant.ShowName.ToString()); // Kan nej vara null
+                HttpContext.Session.SetString("_Consent", participant.ShowName.ToString()); // Kan ej vara null
 #pragma warning restore CS8604 // Possible null reference argument.
 
             }
@@ -104,8 +107,12 @@ namespace provet.Controllers
             {
                 points++;
             }
-            ViewBag.answer = points;
-            return View();
+
+            //Skapa en sessionsvariabel för poängen
+            HttpContext.Session.SetString("_points", points.ToString());
+
+
+            return RedirectToAction("Result");
         }
         /* RESULTAT */
         //-------------------------------------------------------//
@@ -115,6 +122,8 @@ namespace provet.Controllers
         public IActionResult Result()
         {
             ViewData["title"] = "Resultat"; // Sidans titel
+            ViewBag.resultName = HttpContext.Session.GetString("_name");
+            ViewBag.testresult = HttpContext.Session.GetString("_points");
             return View();
         }
     }

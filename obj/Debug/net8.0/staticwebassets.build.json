@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "OJaJyOrT2Qf3Tz127kWRUgRoN6eVuVdS7Q7A6Z0kNds=",
+  "Hash": "hqis0lGbxuYdRE0ibvfUTv/QfeYvqSrr1nwlthcP/wk=",
   "Source": "provet",
   "BasePath": "_content/provet",
   "Mode": "Default",
@@ -15,5 +15,25 @@
       "Pattern": "**"
     }
   ],
-  "Assets": []
+  "Assets": [
+    {
+      "Identity": "C:\\Users\\ander\\OneDrive - Mittuniversitetet\\Skrivbordet\\Webbutveckling\\_Termin 4 VT24\\DT 191G Webbutveckling med .NET\\Moment 2 ASP.NET Core MVC\\provet\\wwwroot\\CSS\\style.css",
+      "SourceId": "provet",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\ander\\OneDrive - Mittuniversitetet\\Skrivbordet\\Webbutveckling\\_Termin 4 VT24\\DT 191G Webbutveckling med .NET\\Moment 2 ASP.NET Core MVC\\provet\\wwwroot\\",
+      "BasePath": "_content/provet",
+      "RelativePath": "CSS/style.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\CSS\\style.css"
+    }
+  ]
 }

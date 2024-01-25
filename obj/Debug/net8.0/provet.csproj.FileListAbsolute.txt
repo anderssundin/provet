@@ -27,3 +27,7 @@ C:\Users\ander\OneDrive - Mittuniversitetet\Skrivbordet\Webbutveckling\_Termin 4
 C:\Users\ander\OneDrive - Mittuniversitetet\Skrivbordet\Webbutveckling\_Termin 4 VT24\DT 191G Webbutveckling med .NET\Moment 2 ASP.NET Core MVC\provet\obj\Debug\net8.0\provet.pdb
 C:\Users\ander\OneDrive - Mittuniversitetet\Skrivbordet\Webbutveckling\_Termin 4 VT24\DT 191G Webbutveckling med .NET\Moment 2 ASP.NET Core MVC\provet\obj\Debug\net8.0\provet.genruntimeconfig.cache
 C:\Users\ander\OneDrive - Mittuniversitetet\Skrivbordet\Webbutveckling\_Termin 4 VT24\DT 191G Webbutveckling med .NET\Moment 2 ASP.NET Core MVC\provet\obj\Debug\net8.0\ref\provet.dll
+C:\Users\ander\OneDrive - Mittuniversitetet\Skrivbordet\Webbutveckling\_Termin 4 VT24\DT 191G Webbutveckling med .NET\Moment 2 ASP.NET Core MVC\provet\bin\Debug\net8.0\result.json
+C:\Users\ander\OneDrive - Mittuniversitetet\Skrivbordet\Webbutveckling\_Termin 4 VT24\DT 191G Webbutveckling med .NET\Moment 2 ASP.NET Core MVC\provet\bin\Debug\net8.0\Newtonsoft.Json.dll
+C:\Users\ander\OneDrive - Mittuniversitetet\Skrivbordet\Webbutveckling\_Termin 4 VT24\DT 191G Webbutveckling med .NET\Moment 2 ASP.NET Core MVC\provet\obj\Debug\net8.0\provet.csproj.AssemblyReference.cache
+C:\Users\ander\OneDrive - Mittuniversitetet\Skrivbordet\Webbutveckling\_Termin 4 VT24\DT 191G Webbutveckling med .NET\Moment 2 ASP.NET Core MVC\provet\obj\Debug\net8.0\provet.csproj.CopyComplete

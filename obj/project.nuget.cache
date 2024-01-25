@@ -1,8 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "XYB6rtV0+HcMdHt/B6mtU3T/i9IXL1clDdCFghO2mkWBzbyfRysc2DlW/GVrck3ScDXGGs6YTbDzPHIGL8mHrQ==",
+  "dgSpecHash": "FxqWIyj5Mx6C5Ta43GnZThJ+cpKUiSxoDyVKO20sY/tnGpofxqozvS01oYczW7dzIcyHBPqv3Ff21MWcLecRgg==",
   "success": true,
   "projectFilePath": "C:\\Users\\ander\\OneDrive - Mittuniversitetet\\Skrivbordet\\Webbutveckling\\_Termin 4 VT24\\DT 191G Webbutveckling med .NET\\Moment 2 ASP.NET Core MVC\\provet\\provet.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\ander\\.nuget\\packages\\newtonsoft.json\\13.0.3\\newtonsoft.json.13.0.3.nupkg.sha512"
+  ],
   "logs": []
 }
