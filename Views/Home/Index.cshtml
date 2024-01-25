@@ -8,15 +8,22 @@
 
 <h3>Fem senaste resultaten</h3>
 
-<ul>
-    @if (Model.LastFiveUsers != null)
-    {
-        @foreach (string name in Model.LastFiveUsers)
+
+   @foreach( var item in Model.LastFiveUsers){
+    <div class="lastFive">
+        @item.Name - 
+        @if (item.HigherEd == "higher_ed_yes")
         {
-            <li>@name - poäng: 5</li>
+            <span>med högre utbildning fick </span>
         }
-    }
-</ul>
+        else
+        {
+           <span>utan högre utbildning fick </span>
+        }
+         @item.Score poäng.
+    </div>
+   }
+
 
 </section>
 

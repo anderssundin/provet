@@ -23,6 +23,13 @@ header {
     justify-content: space-around;
 }
 
+.lastFive{
+    padding: 15px 10px;
+    margin: 5px;
+    border-radius: 5px;
+    background-color: #286f9e;
+}
+
 #home-form {
     border: 1px solid;
     border-radius: 5px;
@@ -102,4 +109,8 @@ input[type="submit"] {
 #resultat{
     font-size: 1.8rem;
     font-weight: bold;
+}
+
+@media (max-width: 600px) {
+    
 }

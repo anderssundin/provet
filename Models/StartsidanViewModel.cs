@@ -1,7 +1,7 @@
 namespace provet.Models;
 public class StartsidanViewModel 
 {
-    public List<string>? LastFiveUsers {get; set;}
+    public IEnumerable<ResultDataModel>? LastFiveUsers {get; set;}
 
     public string? Meddelande {get; set;}
 }

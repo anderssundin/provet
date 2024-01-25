@@ -21,19 +21,14 @@ namespace provet.Controllers
             ViewData["title"] = "Startsidan"; // Sidans titel
             //Rensar session
             HttpContext.Session.Clear();
-            // Hämta in highscore
-            // Mockup
+
+            // Hämta in fil för att lista de fem senaste testen
+            var jsonStr = System.IO.File.ReadAllText("result.json");
+            var JsonObj = JsonConvert.DeserializeObject<IEnumerable<ResultDataModel>>(jsonStr);
             var viewModel = new StartsidanViewModel
             {
-                // Hämta från fil senare!!
-                LastFiveUsers = new List<string>
-                {
-                    "Anders",
-                    "Sven",
-                    "Lisa",
-                    "Adam",
-                    "Steve"
-                },
+
+                LastFiveUsers = JsonObj,
                 Meddelande = "Grymt jobbat!"
             };
             return View(viewModel);
