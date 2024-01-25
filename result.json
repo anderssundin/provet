@@ -1,6 +1,16 @@
 [
   {
     "Name": "Anders",
+    "HigherEd": "higher_ed_no",
+    "Score": 1
+  },
+  {
+    "Name": "Bengt",
+    "HigherEd": "higher_ed_no",
+    "Score": 1
+  },
+  {
+    "Name": "Anders",
     "HigherEd": "Yes",
     "Score": 4
   },
@@ -8,5 +18,10 @@
     "Name": "Bengt",
     "HigherEd": "higher_ed_yes",
     "Score": 3
+  },
+  {
+    "Name": "frida",
+    "HigherEd": "higher_ed_no",
+    "Score": 1
   }
 ]

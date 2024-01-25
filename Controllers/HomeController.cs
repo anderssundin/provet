@@ -50,7 +50,7 @@ namespace provet.Controllers
                 HttpContext.Session.SetString("_name", participant.Name);
                 HttpContext.Session.SetString("_education", participant.HigherEd);
 #pragma warning disable CS8604 // Possible null reference argument.
-                HttpContext.Session.SetString("_Consent", participant.ShowName.ToString()); // Kan ej vara null
+                HttpContext.Session.SetString("_consent", participant.ShowName.ToString()); // Kan ej vara null
 #pragma warning restore CS8604 // Possible null reference argument.
 
             }
@@ -111,24 +111,29 @@ namespace provet.Controllers
             //Skapa en sessionsvariabel för poängen
             HttpContext.Session.SetString("_points", points.ToString());
 
+            if (HttpContext.Session.GetString("_consent")?.ToLower() == "true")
+            {
+                // Skapa json
+                var result = new ResultDataModel();
+                result.Name = HttpContext.Session.GetString("_name");
+                result.HigherEd = HttpContext.Session.GetString("_education");
+                result.Score = points;
 
-            // Skapa json
-            var result = new ResultDataModel();
-            result.Name = HttpContext.Session.GetString("_name");
-            result.HigherEd = HttpContext.Session.GetString("_education");
-            result.Score = points;
 
-           
-            
-            var fetchedFile = System.IO.File.ReadAllText("result.json");
-            var file = JsonConvert.DeserializeObject<List<ResultDataModel>>(fetchedFile);
 
-            // Lägg till till listan File
-            file.Add(result);
+                var fetchedFile = System.IO.File.ReadAllText("result.json");
+                var file = JsonConvert.DeserializeObject<List<ResultDataModel>>(fetchedFile);
 
-            // Skriv till filen
-            var updatedJson = JsonConvert.SerializeObject(file, Formatting.Indented);
-            System.IO.File.WriteAllText("result.json", updatedJson);
+                // Lägg till till listan File
+                file.Insert(0, result);
+
+                // Behåll bara de fem första posterna
+                file = file.Take(5).ToList();
+
+                // Skriv till filen
+                var updatedJson = JsonConvert.SerializeObject(file, Formatting.Indented);
+                System.IO.File.WriteAllText("result.json", updatedJson);
+            }
 
             return RedirectToAction("Result");
         }
