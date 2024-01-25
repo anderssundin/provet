@@ -1,26 +1,26 @@
 [
   {
     "Name": "Anders",
-    "HigherEd": "higher_ed_no",
-    "Score": 1
-  },
-  {
-    "Name": "Bengt",
-    "HigherEd": "higher_ed_no",
-    "Score": 1
-  },
-  {
-    "Name": "Anders",
-    "HigherEd": "Yes",
+    "HigherEd": "higher_ed_yes",
     "Score": 4
   },
   {
-    "Name": "Bengt",
-    "HigherEd": "higher_ed_yes",
+    "Name": "Stefan",
+    "HigherEd": "higher_ed_no",
     "Score": 3
   },
   {
-    "Name": "frida",
+    "Name": "Mia",
+    "HigherEd": "higher_ed_yes",
+    "Score": 5
+  },
+  {
+    "Name": "Anders",
+    "HigherEd": "higher_ed_no",
+    "Score": 1
+  },
+  {
+    "Name": "Bengt",
     "HigherEd": "higher_ed_no",
     "Score": 1
   }

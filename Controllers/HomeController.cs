@@ -29,7 +29,7 @@ namespace provet.Controllers
             {
 
                 LastFiveUsers = JsonObj,
-                Meddelande = "Grymt jobbat!"
+              
             };
             return View(viewModel);
         }
@@ -109,10 +109,12 @@ namespace provet.Controllers
             if (HttpContext.Session.GetString("_consent")?.ToLower() == "true")
             {
                 // Skapa json
-                var result = new ResultDataModel();
-                result.Name = HttpContext.Session.GetString("_name");
-                result.HigherEd = HttpContext.Session.GetString("_education");
-                result.Score = points;
+                var result = new ResultDataModel
+                {
+                    Name = HttpContext.Session.GetString("_name"),
+                    HigherEd = HttpContext.Session.GetString("_education"),
+                    Score = points
+                };
 
 
 
