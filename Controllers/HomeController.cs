@@ -1,5 +1,6 @@
 
 
+using Microsoft.AspNetCore.Authorization.Infrastructure;
 using Microsoft.AspNetCore.Mvc;
 using provet.Models;
 
@@ -39,6 +40,9 @@ namespace provet.Controllers
         {
              ViewData["title"] = "Startsidan"; // Sidans titel
             
+            // Set session variables
+            
+            HttpContext.Session.SetString("_name", participant.Name);
             
             return RedirectToAction("Questions");
         }
@@ -52,8 +56,8 @@ namespace provet.Controllers
         public IActionResult Questions()
         {
 
-            string user = "Anders";
-            ViewBag.user = user;
+            
+            ViewBag.user = HttpContext.Session.GetString("_name");
 
             ViewData["title"] = "Frågor"; // Sidans titel
             return View();
