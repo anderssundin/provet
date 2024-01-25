@@ -1,6 +1,7 @@
 
 
 using Microsoft.AspNetCore.Mvc;
+using provet.Models;
 
 namespace provet.Controllers
 {
@@ -9,6 +10,7 @@ namespace provet.Controllers
 
         /* STARTSIDAN */
         //-------------------------------------------------------//
+       
         public IActionResult Index()
         {
 
@@ -18,7 +20,8 @@ namespace provet.Controllers
             // Mockup
             var viewModel = new StartsidanViewModel
             {
-                HighScore = new List<string>
+                // Hämta från fil senare!!
+                LastFiveUsers = new List<string>
                 {
                     "Anders",
                     "Sven",
@@ -27,39 +30,57 @@ namespace provet.Controllers
                     "Steve"
                 },
                 Meddelande = "Grymt jobbat!"
-        };
-             
-    
-                                             
-
+            };
             return View(viewModel);
+        }
+
+        [HttpPost]
+        public IActionResult Index(ParticipantModel participant)
+        {
+             ViewData["title"] = "Startsidan"; // Sidans titel
+             var viewModel = new StartsidanViewModel
+            {
+                
+                // Hämta från fil senare!!
+                LastFiveUsers = new List<string>
+                {
+                    "Anders",
+                    "Sven",
+                    "Lisa",
+                    "Adam",
+                    "Steve"
+                },
+                Meddelande = "Grymt jobbat!"
+            };
+            ViewBag.test = $"Name: {participant.Name}, HigherEd: {participant.HigherEd}, ShowName: {participant.ShowName}";
+            return View(viewModel);
+        }
+
+
+        /* FRÅGEDELEN */
+        //-------------------------------------------------------//
+
+
+        [Route("/fragor")] // ändrar routingen
+        public IActionResult Questions()
+        {
+
+            string user = "Anders";
+            ViewBag.user = user;
+
+            ViewData["title"] = "Frågor"; // Sidans titel
+            return View();
+        }
+
+        /* RESULTAT */
+        //-------------------------------------------------------//
+
+
+        [Route("/resultat")] // ändrar routingen
+        public IActionResult Result()
+        {
+            ViewData["title"] = "Resultat"; // Sidans titel
+            return View();
+        }
     }
-
-
-    /* FRÅGEDELEN */
-    //-------------------------------------------------------//
-
-
-    [Route("/fragor")] // ändrar routingen
-    public IActionResult Questions()
-    {
-
-        string user = "Anders";
-        ViewBag.user = user;
-
-        ViewData["title"] = "Frågor"; // Sidans titel
-        return View();
-    }
-
-    /* RESULTAT */
-    //-------------------------------------------------------//
-
-
-    [Route("/resultat")] // ändrar routingen
-    public IActionResult Result()
-    {
-        ViewData["title"] = "Resultat"; // Sidans titel
-        return View();
-    }
-}
 }

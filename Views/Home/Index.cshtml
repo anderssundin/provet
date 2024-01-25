@@ -1,4 +1,4 @@
-@model StartsidanViewModel
+@model provet.Models.StartsidanViewModel
 @{
 
 }
@@ -10,11 +10,35 @@
 <h3>Fem senaste resultaten</h3>
 
 <ul>
-    @if (Model.HighScore != null)
+    @if (Model.LastFiveUsers != null)
     {
-        @foreach (string name in Model.HighScore)
+        @foreach (string name in Model.LastFiveUsers)
         {
             <li>@name</li>
         }
     }
 </ul>
+
+
+<form method="post">
+    <label for="Name">Namn:</label>
+    <input type="text" id="Name" name="Name">
+    <br>
+    <fieldset>
+        <legend>Tididgare universitets/högskolestudier?</legend>
+        <input type="radio" id="ed_yes" name="HigherEd" value="higher_ed_yes">
+        <label for="ed_yes">Ja</label><br>
+        <input type="radio" id="ed_no" name="HigherEd" checked value="higher_ed_no">
+        <label for="ed_no">Nej</label><br>
+    </fieldset>
+    <br>
+
+    <input type="checkbox" value="true" name="ShowName" id="ShowName">
+    <label for="ShowName">Det är okej att mitt namn visas i de sensate fem resultaten på denna sida efter provet</label>
+    
+    <br>
+    <input type="submit" value="Jag är redo, börja provet!">
+</form>
+
+
+<p>@ViewBag.test</p>

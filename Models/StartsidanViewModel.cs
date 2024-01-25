@@ -1,6 +1,7 @@
+namespace provet.Models;
 public class StartsidanViewModel 
 {
-    public List<string>? HighScore {get; set;}
+    public List<string>? LastFiveUsers {get; set;}
 
     public string? Meddelande {get; set;}
 }
