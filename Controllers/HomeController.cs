@@ -112,6 +112,24 @@ namespace provet.Controllers
             HttpContext.Session.SetString("_points", points.ToString());
 
 
+            // Skapa json
+            var result = new ResultDataModel();
+            result.Name = HttpContext.Session.GetString("_name");
+            result.HigherEd = HttpContext.Session.GetString("_education");
+            result.Score = points;
+
+           
+            
+            var fetchedFile = System.IO.File.ReadAllText("result.json");
+            var file = JsonConvert.DeserializeObject<List<ResultDataModel>>(fetchedFile);
+
+            // Lägg till till listan File
+            file.Add(result);
+
+            // Skriv till filen
+            var updatedJson = JsonConvert.SerializeObject(file, Formatting.Indented);
+            System.IO.File.WriteAllText("result.json", updatedJson);
+
             return RedirectToAction("Result");
         }
         /* RESULTAT */

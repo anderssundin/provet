@@ -1,7 +1,12 @@
 [
-    {
-        "Name": "Anders",
-        "HigherEd" : "Yes",
-        "Score" : 4
-    }
+  {
+    "Name": "Anders",
+    "HigherEd": "Yes",
+    "Score": 4
+  },
+  {
+    "Name": "Bengt",
+    "HigherEd": "higher_ed_yes",
+    "Score": 3
+  }
 ]
