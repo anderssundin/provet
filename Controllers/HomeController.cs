@@ -11,7 +11,7 @@ namespace provet.Controllers
 
         /* STARTSIDAN */
         //-------------------------------------------------------//
-       
+
         public IActionResult Index()
         {
 
@@ -38,12 +38,18 @@ namespace provet.Controllers
         [HttpPost]
         public IActionResult Index(ParticipantModel participant)
         {
-             ViewData["title"] = "Startsidan"; // Sidans titel
-            
-            // Set session variables
-            
-            HttpContext.Session.SetString("_name", participant.Name);
-            
+            ViewData["title"] = "Startsidan"; // Sidans titel
+
+               // Spara sessions-variabler från formulär
+            if (participant.Name != null && participant.HigherEd != null)
+            {
+                HttpContext.Session.SetString("_name", participant.Name);
+                HttpContext.Session.SetString("_education", participant.HigherEd);
+#pragma warning disable CS8604 // Possible null reference argument.
+                HttpContext.Session.SetString("_Consent", participant.ShowName.ToString()); // Kan nej vara null
+#pragma warning restore CS8604 // Possible null reference argument.
+
+            }
             return RedirectToAction("Questions");
         }
 
@@ -56,8 +62,9 @@ namespace provet.Controllers
         public IActionResult Questions()
         {
 
-            
+         
             ViewBag.user = HttpContext.Session.GetString("_name");
+            
 
             ViewData["title"] = "Frågor"; // Sidans titel
             return View();
