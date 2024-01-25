@@ -38,22 +38,9 @@ namespace provet.Controllers
         public IActionResult Index(ParticipantModel participant)
         {
              ViewData["title"] = "Startsidan"; // Sidans titel
-             var viewModel = new StartsidanViewModel
-            {
-                
-                // Hämta från fil senare!!
-                LastFiveUsers = new List<string>
-                {
-                    "Anders",
-                    "Sven",
-                    "Lisa",
-                    "Adam",
-                    "Steve"
-                },
-                Meddelande = "Grymt jobbat!"
-            };
-            ViewBag.test = $"Name: {participant.Name}, HigherEd: {participant.HigherEd}, ShowName: {participant.ShowName}";
-            return View(viewModel);
+            
+            
+            return RedirectToAction("Questions");
         }
 
 
