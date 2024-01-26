@@ -1,53 +1,63 @@
-@model provet.Models.StartsidanViewModel
+@model provet.Models.StartsidanViewModel;
+
 @{
 
 }
 <section id="home-container">
 
-<section id="home-list">
+    <section id="home-list">
 
-<h3>Fem senaste resultaten</h3>
+        <h3>Fem senaste resultaten</h3>
 
 
-   @foreach( var item in Model.LastFiveUsers){
-    <div class="lastFive">
-        @item.Name - 
-        @if (item.HigherEd == "higher_ed_yes")
+        @foreach (var item in Model.LastFiveUsers)
         {
-            <span>med högre utbildning fick </span>
+            <div class="lastFive">
+                @item.Name -
+                @if (item.HigherEd == "higher_ed_yes")
+                {
+                    <span>med högre utbildning fick </span>
+                }
+                else
+                {
+                    <span>utan högre utbildning fick </span>
+                }
+                @item.Score poäng.
+            </div>
         }
-        else
-        {
-           <span>utan högre utbildning fick </span>
-        }
-         @item.Score poäng.
-    </div>
-   }
 
 
-</section>
+    </section>
 
-<section id="home-form">
-<form method="post">
-    <label for="Name">Provdeltagare:</label>
-    <input type="text" id="Name" name="Name" placeholder="Namn">
-    <br>
-    <fieldset>
-        <legend>Tididgare universitets/högskolestudier?</legend>
-        <br>
-        <input type="radio" id="ed_yes" name="HigherEd" value="higher_ed_yes">
-        <label for="ed_yes">Ja</label><br>
-        <input type="radio" id="ed_no" name="HigherEd"  value="higher_ed_no" checked >
-        <label for="ed_no">Nej</label><br><br>
-    </fieldset>
-    <br>
+    <section id="home-form">
+        <form method="post">
 
-<label for="ShowName">Det är okej att mitt namn visas i de sensate fem resultaten på denna sida efter provet:</label>
-    <input type="checkbox" value="true" name="ShowName" id="ShowName">
-    
-    
-    <br>
-    <input type="submit" value="Jag är redo, börja provet!">
-</form>
-</section>
+            <label asp-for="@Model.participantModel.Name"></label>
+            <input type="text" id="Name" name="Name" asp-for="@Model.participantModel.Name" placeholder="Namn">
+            <div asp-validation-summary="All"></div>
+            @if (@Model.participantModel.Name != null)
+            {
+                <span asp-validation-for="@Model.participantModel.Name"></span>
+            }
+
+            <br>
+            <fieldset>
+                <legend>Tididgare universitets/högskolestudier?</legend>
+                <br>
+                <input type="radio" id="ed_yes" name="HigherEd" value="higher_ed_yes">
+                <label for="ed_yes">Ja</label><br>
+                <input type="radio" id="ed_no" name="HigherEd" value="higher_ed_no" checked>
+                <label for="ed_no">Nej</label><br><br>
+            </fieldset>
+            <br>
+
+            <label for="ShowName">Det är okej att mitt namn visas i de sensate fem resultaten på denna sida efter
+                provet:</label>
+            <input type="checkbox" value="true" name="ShowName" id="ShowName">
+
+
+            <br>
+            <input type="submit" value="Jag är redo, börja provet!">
+        </form>
+    </section>
 </section>

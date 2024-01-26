@@ -29,7 +29,7 @@ namespace provet.Controllers
             {
 
                 LastFiveUsers = JsonObj,
-              
+                participantModel = new ParticipantModel()
             };
             return View(viewModel);
         }
@@ -39,17 +39,33 @@ namespace provet.Controllers
         {
             ViewData["title"] = "Startsidan"; // Sidans titel
 
-            // Spara sessions-variabler från formulär
-            if (participant.Name != null && participant.HigherEd != null)
+   
+
+            // Om valid input spara variabler och skicka vidare till frågor
+            if (ModelState.IsValid)
             {
-                HttpContext.Session.SetString("_name", participant.Name);
-                HttpContext.Session.SetString("_education", participant.HigherEd);
+                // Spara sessions-variabler från formulär
+                if (participant.Name != null && participant.HigherEd != null)
+                {
+                    HttpContext.Session.SetString("_name", participant.Name);
+                    HttpContext.Session.SetString("_education", participant.HigherEd);
 #pragma warning disable CS8604 // Possible null reference argument.
-                HttpContext.Session.SetString("_consent", participant.ShowName.ToString()); // Kan ej vara null
+                    HttpContext.Session.SetString("_consent", participant.ShowName.ToString()); // Kan ej vara null
 #pragma warning restore CS8604 // Possible null reference argument.
 
+                }
+                return RedirectToAction("Questions");
             }
-            return RedirectToAction("Questions");
+            // Hämta in fil för att lista de fem senaste testen
+            var jsonStr = System.IO.File.ReadAllText("result.json");
+            var JsonObj = JsonConvert.DeserializeObject<IEnumerable<ResultDataModel>>(jsonStr);
+            var viewModel = new StartsidanViewModel
+            {
+
+                LastFiveUsers = JsonObj,
+                participantModel = new ParticipantModel()
+            };
+            return View(viewModel);
         }
 
 
