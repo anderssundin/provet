@@ -129,6 +129,10 @@ input[type="submit"] {
     font-weight: 700;
     text-align: center;
 }
+
+.text-warning{
+    color: rgb(0, 245, 20);
+}
 @media (max-width: 600px) {
     #home-container {
         flex-direction: column;

@@ -91,7 +91,8 @@ namespace provet.Controllers
         [Route("/fragor")] // ändrar routingen
         public IActionResult Questions(AnswersModel answers)
         {
-
+              ViewData["title"] = "Frågor"; // Sidans titel
+            if(ModelState.IsValid) {
             // Skapa en varibel som håller antalet rätta svar
             int points = 0;
 
@@ -148,8 +149,10 @@ namespace provet.Controllers
                 System.IO.File.WriteAllText("result.json", updatedJson);
                 }
             }
-
             return RedirectToAction("Result");
+ }
+            
+           return View();
         }
         /* RESULTAT */
         //-------------------------------------------------------//

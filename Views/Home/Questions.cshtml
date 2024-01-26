@@ -1,102 +1,111 @@
+@model provet.Models.AnswersModel;
 @{
 
 }
 
 <section id="question-container">
-<h2>Okej @ViewBag.user, då kör vi!</h2>
-<br>
-<form method="post">
-
-<div class="question-div">
-    <h3>Fråga 1:</h3>
-    <h4>Vilket är kroppens tyngsta organ?</h4>
-
-    <div class="question-radio">
-    <label>
-        <input type="radio" name="Question1" value="alternative1"> Hjärnan.
-    </label>
-    <label>
-        <input type="radio" name="Question1" value="alternative2"> Levern.
-    </label>
-    <label>
-        <input type="radio" name="Question1" value="alternative3"> Huden.
-    </label>
-    </div>
-</div>
-
-<div class="question-div">
-    <h3>Fråga 2:</h3>
-    <h4>Varför låter det när man hickar?</h4>
-    <div class="question-radio">
-    <label>
-        <input type="radio" name="Question2" value="alternative1"> För att stämbanden rör på sig.
-    </label>
-    <label>
-        <input type="radio" name="Question2" value="alternative2"> För att struplocket i halsen stängs samtidigt som man andas in.
-    </label>
-    <label>
-        <input type="radio" name="Question2" value="alternative3"> För att diaframa vibrerar mot bröstkorgen.
-    </label>
-    </div>
-</div>
-
-<div class="question-div">
-    <h3>Fråga 3:</h3>
-    <h4> Vad har de vita blodkropparna för funktion?</h4>
-
-     <div class="question-radio">
-    <label>
-        <input type="radio" name="Question3" value="alternative1"> Hjälper till att koagulera blod för att stoppa blödning.
-    </label>
-    <label>
-        <input type="radio" name="Question3" value="alternative2"> Fungerar som en städpatrull som städar vid såret om du gör dig illa.
-    </label>
-    <label>
-        <input type="radio" name="Question3" value="alternative3"> Bär syre till- och koldioxid från kroppens celler.
-    </label>
-
-    </div>
-</div>
-
-<div class="question-div">
-    <h3>Fråga 4:</h3>
-    <h4>Kalle är väldigt känslosam, när han kollar på känsliga filmer gråter han så att popcornen blir genomblöta. Att det plötsligt kan rinna en
-        massa vatten från ögonen är ju ganska konstigt. Vad har egentligen tårarna för uppgift?</h4>
-
-         <div class="question-radio">
-    <label>
-        <input type="radio" name="Question4" value="alternative1"> Att hålla kinderna lena och fina.
-    </label>
-    <label>
-        <input type="radio" name="Question4" value="alternative2"> Att hålla ögonen rena.
-    </label>
-    <label>
-        <input type="radio" name="Question4" value="alternative3"> Tårar används för att visa för andra att man har nära till sina känslor.
-    </label>
-    </div>
-</div>
-
-
-<div class="question-div">
-    <h3>Fråga 5:</h3>
-    <h4>Vilket ben hör inte hemma i örat</h4>
-
-     <div class="question-radio">
-    <label>
-        <input type="radio" name="Question5" value="alternative1"> Högaffeln
-    </label>
-    <label>
-        <input type="radio" name="Question5" value="alternative2"> Hammaren
-    </label>
-    <label>
-        <input type="radio" name="Question5" value="alternative3"> Stigbygeln
-    </label>
-    </div>
-</div>
+    <h2>Okej @ViewBag.user, då kör vi!</h2>
     <br>
-    <br>
-    <input type="submit" value="Färdig, nu vill jag skicka in mitt svar!">
+    <form method="post">
+        <div asp-validation-summary="ModelOnly"></div>
+        <div class="question-div">
+            <h3>Fråga 1:</h3>
+            <h4>Vilket är kroppens tyngsta organ?</h4>
+            <span class="text-warning" asp-validation-for="@Model.Question1"></span>
+            <div class="question-radio">
+                <label>
+                    <input type="radio" name="Question1" value="alternative1"> Hjärnan.
+                </label>
+                <label>
+                    <input type="radio" name="Question1" value="alternative2"> Levern.
+                </label>
+                <label>
+                    <input type="radio" name="Question1" value="alternative3"> Huden.
+                </label>
+            </div>
+        </div>
 
-</form>
+        <div class="question-div">
+            <h3>Fråga 2:</h3>
+            <h4>Varför låter det när man hickar?</h4>
+            <span class="text-warning" asp-validation-for="@Model.Question1"></span>
+            <div class="question-radio">
+                <label>
+                    <input type="radio" name="Question2" value="alternative1"> För att stämbanden rör på sig.
+                </label>
+                <label>
+                    <input type="radio" name="Question2" value="alternative2"> För att struplocket i halsen stängs
+                    samtidigt som man andas in.
+                </label>
+                <label>
+                    <input type="radio" name="Question2" value="alternative3"> För att diaframa vibrerar mot
+                    bröstkorgen.
+                </label>
+            </div>
+        </div>
+
+        <div class="question-div">
+            <h3>Fråga 3:</h3>
+            <h4> Vad har de vita blodkropparna för funktion?</h4>
+            <span class="text-warning" asp-validation-for="@Model.Question1"></span>
+            <div class="question-radio">
+                <label>
+                    <input type="radio" name="Question3" value="alternative1"> Hjälper till att koagulera blod för att
+                    stoppa blödning.
+                </label>
+                <label>
+                    <input type="radio" name="Question3" value="alternative2"> Fungerar som en städpatrull som städar
+                    vid såret om du gör dig illa.
+                </label>
+                <label>
+                    <input type="radio" name="Question3" value="alternative3"> Bär syre till- och koldioxid från
+                    kroppens celler.
+                </label>
+
+            </div>
+        </div>
+
+        <div class="question-div">
+            <h3>Fråga 4:</h3>
+            <h4>Kalle är väldigt känslosam, när han kollar på känsliga filmer gråter han så att popcornen blir
+                genomblöta. Att det plötsligt kan rinna en
+                massa vatten från ögonen är ju ganska konstigt. Vad har egentligen tårarna för uppgift?</h4>
+            <span class="text-warning" asp-validation-for="@Model.Question1"></span>
+            <div class="question-radio">
+                <label>
+                    <input type="radio" name="Question4" value="alternative1"> Att hålla kinderna lena och fina.
+                </label>
+                <label>
+                    <input type="radio" name="Question4" value="alternative2"> Att hålla ögonen rena.
+                </label>
+                <label>
+                    <input type="radio" name="Question4" value="alternative3"> Tårar används för att visa för andra att
+                    man har nära till sina känslor.
+                </label>
+            </div>
+        </div>
+
+
+        <div class="question-div">
+            <h3>Fråga 5:</h3>
+            <h4>Vilket ben hör inte hemma i örat</h4>
+            <span class="text-warning" asp-validation-for="@Model.Question1"></span>
+            <div class="question-radio">
+                <label>
+                    <input type="radio" name="Question5" value="alternative1"> Högaffeln
+                </label>
+                <label>
+                    <input type="radio" name="Question5" value="alternative2"> Hammaren
+                </label>
+                <label>
+                    <input type="radio" name="Question5" value="alternative3"> Stigbygeln
+                </label>
+            </div>
+        </div>
+        <br>
+        <br>
+        <input type="submit" value="Färdig, nu vill jag skicka in mitt svar!">
+
+    </form>
 
 </section>
