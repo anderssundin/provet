@@ -27,9 +27,9 @@ namespace provet.Controllers
             var JsonObj = JsonConvert.DeserializeObject<IEnumerable<ResultDataModel>>(jsonStr);
             var viewModel = new StartsidanViewModel
             {
-
                 LastFiveUsers = JsonObj,
-                participantModel = new ParticipantModel()
+                ParticipantModel = new ParticipantModel()
+                
             };
             return View(viewModel);
         }
@@ -61,9 +61,8 @@ namespace provet.Controllers
             var JsonObj = JsonConvert.DeserializeObject<IEnumerable<ResultDataModel>>(jsonStr);
             var viewModel = new StartsidanViewModel
             {
-
                 LastFiveUsers = JsonObj,
-                participantModel = new ParticipantModel()
+                ParticipantModel = new ParticipantModel()
             };
             return View(viewModel);
         }
@@ -137,6 +136,7 @@ namespace provet.Controllers
                 var fetchedFile = System.IO.File.ReadAllText("result.json");
                 var file = JsonConvert.DeserializeObject<List<ResultDataModel>>(fetchedFile);
 
+                if (file != null){
                 // Lägg till till listan File
                 file.Insert(0, result);
 
@@ -146,6 +146,7 @@ namespace provet.Controllers
                 // Skriv till filen
                 var updatedJson = JsonConvert.SerializeObject(file, Formatting.Indented);
                 System.IO.File.WriteAllText("result.json", updatedJson);
+                }
             }
 
             return RedirectToAction("Result");

@@ -110,7 +110,27 @@ input[type="submit"] {
     font-size: 1.8rem;
     font-weight: bold;
 }
-
+#partial-circle {
+    position: absolute;
+    top: 4%;
+    left: 2%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    background-color: red;
+    opacity: .7;
+}
+#partial-p {
+    transform: rotate(-40deg);
+    color: white;
+    font-weight: 700;
+    text-align: center;
+}
 @media (max-width: 600px) {
-    
+    #home-container {
+        flex-direction: column;
+    }
 }
